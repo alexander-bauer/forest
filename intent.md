@@ -1,7 +1,6 @@
-
 Notes
 =====
-
+````
 [07:38] <   DuoNoxSol> | Alright, so the idea is to loosely tie together a bunch of grove instances
 [07:38] <   DuoNoxSol> | say you have a project
 [07:38] <   DuoNoxSol> | like distru
@@ -29,3 +28,4 @@ Notes
 [07:43] <   DuoNoxSol> | and it will then be able to display a page summarizing the activities of all of the developers
 [07:43] <   DuoNoxSol> | as well as offer a central repository to clone from
 [07:43] <   DuoNoxSol> | and issue tracker
+````

@@ -37,14 +37,21 @@ func Serve(root, iface string, port int) (err error) {
 	l.Printf("Starting http server %s:%d\nRoot path %q", iface, port, root)
 	rootpath = root
 
-	http.HandleFunc("/", handle)
+	http.HandleFunc("/p/", handle)
 	http.ListenAndServe(iface+":"+strconv.Itoa(port), nil)
 	return
 }
 
-// Handle is the primary (read: only) http handler. It uses the variable
-// rootpath to determine where to serve content from.
+// handle is the "maintainence" handler. It manages requests (such as
+// for the favicon) and may, in the future, redirect project requests to
+// the handleProject() handler.
 func handle(w http.ResponseWriter, req *http.Request) {
-	// 18/01/2013 I hope this doesn't turn into a god function.
 	w.Write([]byte("Hello, Forest."))
+}
+
+// handleProject is the handler for project requests. It uses the
+// variable rootpath to determine where to serve content from.
+func handleProject(w http.ResponseWriter, req *http.Request) {
+	// 19/01/2013 I hope this doesn't turn into a god function.
+	w.Write([]byte("This is a project directory."))
 }
